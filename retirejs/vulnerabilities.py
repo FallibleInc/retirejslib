@@ -1,4 +1,4 @@
-repo = {
+definitions = {
 	"retire-example": {
 		"vulnerabilities" : [
 			{

@@ -1,4 +1,4 @@
-### Port of RetireJS in Python
+### Port of [RetireJS](https://github.com/RetireJS/retire.js) in Python
 
 #### Installation
 `pip install retirejs`
@@ -6,7 +6,7 @@
 #### How to use
 
 ```python
-from retirejs import retirejs
+import retirejs
 
 retirejs.scan_endpoint("http://code.jquery.com/jquery-1.6.min.js")
 
