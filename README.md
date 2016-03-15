@@ -8,7 +8,7 @@
 ```python
 from retirejs import retirejs
 
-retire.scan_endpoint("http://code.jquery.com/jquery-1.6.min.js")
+retirejs.scan_endpoint("http://code.jquery.com/jquery-1.6.min.js")
 
 
 ```
