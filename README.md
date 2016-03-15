@@ -1,4 +1,4 @@
-### Port of [RetireJS](https://github.com/RetireJS/retire.js) in Python
+### Python port of [RetireJS](https://github.com/RetireJS/retire.js)
 
 #### Installation
 `pip install retirejs`
