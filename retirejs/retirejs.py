@@ -159,7 +159,7 @@ def scanFileContent(content, repo=repo) :
 		result = scan(content, 'filecontentreplace',  replacementMatch, repo);
 	
 	if (len(result) == 0) :
-		result = scanhash(hashlib.sha1(content).hexdigest(), repo);
+		result = scanhash(hashlib.sha1(content.encode('utf8')).hexdigest(), repo);
 	
 	return check(result);
 
@@ -173,6 +173,6 @@ def scan_endpoint(uri, repo=repo):
 	filecontent = requests.get(uri, verify=False).text
 	filecontent_scan_result = scanFileContent(filecontent, repo)
 
-	return uri_scan_result.extend(filecontent_scan_result)
-
+	uri_scan_result.extend(filecontent_scan_result)
+	return uri_scan_result
 	

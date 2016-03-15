@@ -6,7 +6,7 @@
 #### How to use
 
 ```python
-import retirejs
+from retirejs import retirejs
 
 retire.scan_endpoint("http://code.jquery.com/jquery-1.6.min.js")
 
