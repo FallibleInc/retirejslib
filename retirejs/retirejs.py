@@ -1,6 +1,7 @@
 import re
 from repo import repo
 import hashlib
+import requests
 
 
 def isDefined(o) :
@@ -83,7 +84,6 @@ def check(results) :
 				result["vulnerabilities"].append(vulnerability)
 			
 		
-	
 	return results;
 
 
@@ -163,4 +163,16 @@ def scanFileContent(content, repo=repo) :
 	
 	return check(result);
 
+def scan_endpoint(uri, repo=repo):
+	"""
+	Given a uri it scans for vulnerability in uri and the content
+	hosted at that uri
+	"""
+	uri_scan_result = scanUri(uri, repo)
 
+	filecontent = requests.get(uri, verify=False).text
+	filecontent_scan_result = scanFileContent(filecontent, repo)
+
+	return uri_scan_result.extend(filecontent_scan_result)
+
+	

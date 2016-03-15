@@ -1,18 +1,21 @@
 ### Port of RetireJS in Python
 
-#### Specifically:
+#### Installation
+`pip install retirejs`
 
-* https://github.com/RetireJS/retire.js/blob/master/node/lib/retire.js  as retirejs.py . How to convert:
-	1. convert dot access to dict access in python, 
-	2. function to def, 
-	3. && and || to `and` and `or` respectively, 
-	4. regex match to re.search
-	5. `null` to `None`
-	6. ternerary operator change 
-	7. `for loop` change where required (mostly not required)
-	8. `if` is mostly as it is
-* https://github.com/RetireJS/retire.js/blob/master/repository/jsrepository.json as repo.py . How to convert: 
-	1.  Replace `\\` with `\` , 
-	2.  replace `$$version$$` with `[0-9][0-9.a-z_\-]+`
+#### How to use
 
-* And test from https://github.com/RetireJS/retire.js/tree/master/node/spec/tests as test_requirejs.py
+```python
+import retirejs
+
+retire.scan_endpoint("http://code.jquery.com/jquery-1.6.min.js")
+
+
+```
+
+
+#### Sample Output:
+
+```python
+{'detection': 'filecontent', 'vulnerabilities': [{'info': ['http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-4969', 'http://research.insecurelabs.org/jquery/test/'], 'identifiers': {'CVE': ['CVE-2011-4969']}, 'severity': 'medium'}, {'info': ['http://bugs.jquery.com/ticket/11290', 'http://research.insecurelabs.org/jquery/test/'], 'identifiers': {'bug': '11290', 'summary': 'Selector interpreted as HTML'}, 'severity': 'medium'}, {'info': ['https://github.com/jquery/jquery/issues/2432', 'http://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/'], 'identifiers': {'summary': '3rd party CORS request may execute'}, 'severity': 'medium'}], 'version': '1.6.0', 'component': 'jquery'}
+```
