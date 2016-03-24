@@ -1,4 +1,8 @@
 ### Python port of [RetireJS](https://github.com/RetireJS/retire.js)
+[![Travis](https://img.shields.io/travis/FallibleInc/retirejslib.svg?style=flat-square)]()
+[![PyPI](https://img.shields.io/pypi/l/retirejs.svg?style=flat-square)]()
+[![PyPI](https://img.shields.io/pypi/v/retirejs.svg?style=flat-square)]()
+[![PyPI](https://img.shields.io/pypi/dm/retirejs.svg?style=flat-square)]()
 
 #### Installation
 `pip install retirejs`
