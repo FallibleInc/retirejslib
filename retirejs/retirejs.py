@@ -1,5 +1,9 @@
 import re
-from vulnerabilities import definitions
+try:
+    from .vulnerabilities import definitions
+except:
+    from vulnerabilities import definitions
+
 import hashlib
 import requests
 
@@ -70,7 +74,7 @@ def check(results):
                 None)].get(
             "vulnerabilities",
             None)
-        for i in xrange(len(vulns)):
+        for i in range(len(vulns)):
             if (not _is_at_or_above(result.get("version", None),
                                 vulns[i].get("below", None))):
                 if (is_defined(vulns[i].get("atOrAbove", None)) and not _is_at_or_above(
@@ -102,7 +106,7 @@ def _is_at_or_above(version1, version2):
     v2 = re.split(r'[.-]', version2)
 
     l = len(v1) if len(v1) > len(v2) else len(v2)
-    for i in xrange(l):
+    for i in range(l):
         v1_c = _to_comparable(v1[i] if len(v1) > i else None)
         v2_c = _to_comparable(v2[i] if len(v2) > i else None)
         # print v1_c, "vs", v2_c
