@@ -38,13 +38,27 @@ definitions = {
 				"info" : [ "http://bugs.jquery.com/ticket/11290" , "http://research.insecurelabs.org/jquery/test/" ]
 			},
 			{
+				"atOrAbove" : "1.4.0",
 				"below" : "1.12.0",
 				"identifiers": {
+					"issue" : "2432",
+					"summary": "3rd party CORS request may execute"
+				},
+				"severity": "medium",
+				"info" : [ "https://github.com/jquery/jquery/issues/2432", "http://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/" ]
+			},
+			{
+				"atOrAbove" : "1.12.3",
+				"below" : "3.0.0-beta1",
+				"identifiers": {
+					"issue" : "2432",
 					"summary": "3rd party CORS request may execute"
 				},
 				"severity": "medium",
 				"info" : [ "https://github.com/jquery/jquery/issues/2432", "http://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/" ]
 			}
+
+
 		],
 		"extractors" : {
 			"func"    		: [ "/[0-9.]+/.test(jQuery.fn.jquery) ? jQuery.fn.jquery : undefined" ],
@@ -326,6 +340,7 @@ definitions = {
 				"info" : [ "http://www.cvedetails.com/cve/CVE-2013-4941/" ]
 			},
 			{
+				"atOrAbove" : "3.0.0",
 				"below" : "3.10.3",
 				"severity": "high",
 				"identifiers": {"CVE": [ "CVE-2013-4940" ] },
@@ -688,6 +703,7 @@ definitions = {
 				"info" : [ "https://github.com/angular/angular.js/blob/b3b5015cb7919708ce179dc3d6f0d7d7f43ef621/CHANGELOG.md" ]
 			},
 			{
+				"atOrAbove" : "1.2.19",
 				"below" : "1.2.24",
 				"severity": "medium",
 				"identifiers": {
@@ -731,7 +747,36 @@ definitions = {
 					"summary": "server-side xss can bypass CSP"
 				},
 				"info" : [ "https://github.com/angular/angular.js/blob/master/CHANGELOG.md" ]
+			},
+			{
+				"below" : "1.5.0-beta.2",
+				"severity": "low",
+				"identifiers": {
+					"summary": "UI Redress Attack Through Improper Sanitization of SVG Elements"
+				},
+				"info" : [ "https://srcclr.com/security/ui-redress-attack-through-improper/javascript/s-2252" ]			
+			},
+			{
+				"below" : "1.5.0-beta.2",
+				"severity": "medium",
+				"identifiers": {
+					"summary": "Arbitrary Code Execution Through SVG Animation Functionality"
+				},
+				"info" : [ "https://srcclr.com/security/arbitrary-code-execution-through-svg/javascript/s-2253" ]
+			},
+			{
+				"atOrAbove" : "1.3.3",
+				"below" : "2.0.0.0",
+				"severity": "medium",
+				"identifiers": {
+					"summary": "Arbitrary Code Execution Through access to constructors"
+				},
+				"info" : [ 
+					"https://github.com/angular/angular.js/issues/14939",
+					"https://srcclr.com/security/arbitrary-code-execution-via-constructor-access/javascript/sid-2589/summary" 
+				]
 			}
+
 
 		],
 		"extractors" : {
