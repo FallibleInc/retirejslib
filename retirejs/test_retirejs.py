@@ -96,7 +96,7 @@ class TestingFilename(unittest.TestCase):
 
     def testfilename2(self):
         result = retire.scan_filename("jquery-2.0.0.js")
-        self.assertFalse(retire.is_vulnerable(result))
+        self.assertTrue(retire.is_vulnerable(result))
 
     def testfilename3(self):
         result = retire.scan_filename("jquery-1.12.0.js")
@@ -111,16 +111,12 @@ class TestingFilename(unittest.TestCase):
         self.assertTrue(retire.is_vulnerable(result))
 
     def testfilename6(self):
-        result = retire.scan_filename("jquery-2.0.0.js")
-        self.assertFalse(retire.is_vulnerable(result))
-
-    def testfilename7(self):
         result = retire.scan_filename("jquery-1.6.0-rc.1.js")
         self.assertTrue(retire.is_vulnerable(result))
 
-    def testfilename8(self):
+    def testfilename7(self):
         result = retire.scan_filename("jquery-2.0.0-rc.1.1.js")
-        self.assertFalse(retire.is_vulnerable(result))
+        self.assertTrue(retire.is_vulnerable(result))
 
 
 class TestingVersion(unittest.TestCase):
