@@ -4,7 +4,7 @@ import hashlib
 from vulnerabilities import definitions
 
 content = "data"
-hash = hashlib.sha1(content).hexdigest()
+hash = hashlib.sha1(content.encode("utf-8")).hexdigest()
 
 
 # Some tests might fail because new bugs introduced :(
