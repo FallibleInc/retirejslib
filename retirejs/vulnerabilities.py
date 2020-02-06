@@ -210,6 +210,14 @@ definitions = {
 					"summary": "open redirect leads to cross site scripting"
 				},
 				"info": [ "http://sirdarckcat.blogspot.no/2017/02/unpatched-0day-jquery-mobile-xss.html" ]
+			},
+			{	
+				"below" : "1.3.0",	
+				"severity": "high",	
+				"identifiers": {	
+					"summary": "Endpoint that reflect user input leads to cross site scripting"	
+				},	
+				"info": [ "https://gist.github.com/jupenur/e5d0c6f9b58aa81860bf74e010cf1685" ]	
 			}
 		],
 		"extractors" : {
@@ -817,7 +825,13 @@ definitions = {
 				"severity": "medium",
 				"identifiers": { "PR" : "307" },
 				"info" : [ "https://github.com/dojo/dojo/pull/307" , "https://dojotoolkit.org/blog/dojo-1-14-released"]
-			}
+			},
+	      		{	
+	        		"below" : "1.14",	
+	        		"severity": "medium",	
+	        		"identifiers": { "CVE": ["CVE-2018-15494"] },	
+	        		"info" : [ "https://dojotoolkit.org/blog/dojo-1-14-released" ]	
+	      		}
 		],
 		"extractors" : {
 			"func"				 : [ "dojo.version.toString()" ],
@@ -841,6 +855,14 @@ definitions = {
 	"angularjs" : {
 		"bowername": [ "angularjs", "angular.js" ],
 		"vulnerabilities" : [
+			{	
+				"below" : "1.7.9",	
+				"severity": "medium",	
+				"identifiers": {	
+					"summary": "Prototype pollution"	
+				},	
+				"info" : [ "https://github.com/angular/angular.js/commit/726f49dcf6c23106ddaf5cfd5e2e592841db743a", "https://github.com/angular/angular.js/blob/master/CHANGELOG.md#179-pollution-eradication-2019-11-19" ]	
+			},
 			{
 				"atOrAbove" : "1.5.0",
 				"below" : "1.6.9",
@@ -1014,8 +1036,28 @@ definitions = {
 					"https://github.com/wycats/handlebars.js/issues/1495",
 					"https://github.com/wycats/handlebars.js/commit/cd38583216dce3252831916323202749431c773e"
 				]
-			}
-		],
+			},
+				{	
+					"below" : "4.3.0",	
+					"severity": "low",	
+					"identifiers": {	
+						"summary": "Disallow calling helperMissing and blockHelperMissing directly"	
+					},	
+					"info" : [	
+						"https://github.com/wycats/handlebars.js/blob/master/release-notes.md#v430---september-24th-2019"	
+					]	
+				},	
+				{	
+					"below" : "4.5.3",	
+					"severity": "medium",	
+					"identifiers": {	
+						"summary": "Prototype pollution"	
+					},	
+					"info" : [	
+						"https://github.com/wycats/handlebars.js/blob/master/release-notes.md#v453---november-18th-2019"	
+					]	
+				}	
+			],
 		"extractors" : {
 			"func"			: [ "Handlebars.VERSION" ],
 			"uri"			: [ "/([0-9][0-9.a-z_\-]+)/handlebars(\.min)?\.js" ],
